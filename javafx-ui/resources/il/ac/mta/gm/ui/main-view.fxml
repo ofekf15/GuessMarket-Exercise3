@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="il.ac.mta.gm.ui.MainController">
+    <top>
+        <VBox spacing="8" styleClass="app-header">
+            <HBox alignment="CENTER_LEFT" spacing="12">
+                <Label text="Guess Market" styleClass="app-title" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Button fx:id="loadButton" text="Load XML File" onAction="#onLoadFile"
+                        styleClass="primary-button" />
+            </HBox>
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <Label text="Loaded file:" styleClass="muted-label" />
+                <Label fx:id="loadedFileLabel" text="No file loaded" textOverrun="CENTER_ELLIPSIS"
+                       maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
+            </HBox>
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <ProgressBar fx:id="loadProgress" prefWidth="260" visible="false"
+                             managed="${loadProgress.visible}" progress="0" />
+                <Label fx:id="loadingLabel" visible="false"
+                       managed="${loadingLabel.visible}" />
+            </HBox>
+        </VBox>
+    </top>
+    <center>
+        <TabPane tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="Events">
+                    <content>
+                        <fx:include fx:id="eventsView" source="events-view.fxml" />
+                    </content>
+                </Tab>
+                <Tab text="Users">
+                    <content>
+                        <fx:include fx:id="usersView" source="users-view.fxml" />
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </center>
+</BorderPane>

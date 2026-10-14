@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<SplitPane dividerPositions="0.34"
+           xmlns="http://javafx.com/javafx/25"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="il.ac.mta.gm.ui.UsersController">
+    <items>
+        <TableView fx:id="userTable">
+            <placeholder>
+                <Label text="No users loaded" />
+            </placeholder>
+            <columns>
+                <TableColumn fx:id="userNameColumn" text="User" prefWidth="160" />
+                <TableColumn fx:id="userBalanceColumn" text="Balance" prefWidth="100" />
+                <TableColumn fx:id="userMmColumn" text="MM events" prefWidth="130" />
+            </columns>
+        </TableView>
+        <ScrollPane fitToWidth="true" fitToHeight="false" pannable="true">
+            <content>
+                <VBox fx:id="userDetailBox" spacing="10" styleClass="detail-pane" />
+            </content>
+        </ScrollPane>
+    </items>
+</SplitPane>

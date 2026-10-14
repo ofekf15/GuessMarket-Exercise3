@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="il.ac.mta.gm.ui.EventsController">
+    <top>
+        <FlowPane hgap="10" vgap="8" alignment="CENTER_LEFT" styleClass="filter-bar">
+            <Label text="Method" />
+            <ComboBox fx:id="methodFilter" prefWidth="130" />
+            <Label text="Status" />
+            <ComboBox fx:id="statusFilter" prefWidth="130" />
+            <Label text="Commission" />
+            <ComboBox fx:id="commissionFilter" prefWidth="140" />
+        </FlowPane>
+    </top>
+    <center>
+        <SplitPane dividerPositions="0.46">
+            <items>
+                <TableView fx:id="eventTable">
+                    <placeholder>
+                        <Label text="No events loaded or matching the filters" />
+                    </placeholder>
+                    <columns>
+                        <TableColumn fx:id="nameColumn" text="Event" prefWidth="210" />
+                        <TableColumn fx:id="statusColumn" text="Status" prefWidth="105" />
+                        <TableColumn fx:id="methodColumn" text="Method" prefWidth="105" />
+                        <TableColumn fx:id="commissionColumn" text="Commission" prefWidth="145" />
+                        <TableColumn fx:id="balanceColumn" text="Account" prefWidth="90" />
+                    </columns>
+                </TableView>
+                <ScrollPane fitToWidth="true" fitToHeight="false" pannable="true">
+                    <content>
+                        <VBox fx:id="detailBox" spacing="10" styleClass="detail-pane" />
+                    </content>
+                </ScrollPane>
+            </items>
+        </SplitPane>
+    </center>
+    <bottom>
+        <FlowPane hgap="10" vgap="8" alignment="CENTER_RIGHT" styleClass="action-bar">
+            <Button fx:id="startButton" text="Start Event" onAction="#onStart" />
+            <Button fx:id="buyButton" text="Buy Shares" onAction="#onBuy" />
+            <Button fx:id="orderButton" text="Place Order" onAction="#onOrder" />
+            <Button fx:id="closeButton" text="Close / Resolve" onAction="#onClose"
+                    styleClass="danger-button" />
+        </FlowPane>
+    </bottom>
+</BorderPane>

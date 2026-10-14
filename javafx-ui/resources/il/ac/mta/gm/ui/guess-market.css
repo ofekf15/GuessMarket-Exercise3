@@ -1,0 +1,77 @@
+.root {
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+    -fx-font-size: 13px;
+    -fx-background-color: #f4f6f8;
+    -fx-text-fill: #1f2937;
+}
+
+.app-header {
+    -fx-padding: 14 18 12 18;
+    -fx-background-color: white;
+    -fx-border-color: transparent transparent #d9e0e7 transparent;
+}
+
+.app-title {
+    -fx-font-size: 23px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #153b64;
+}
+
+.muted-label, .hint {
+    -fx-text-fill: #667085;
+}
+
+.primary-button {
+    -fx-background-color: #1769aa;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.primary-button:hover {
+    -fx-background-color: #12568d;
+}
+
+.danger-button {
+    -fx-text-fill: #9b1c1c;
+}
+
+.filter-bar, .action-bar {
+    -fx-padding: 10 14 10 14;
+    -fx-background-color: #eef2f6;
+}
+
+.detail-pane {
+    -fx-padding: 16;
+    -fx-background-color: white;
+}
+
+.section-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #153b64;
+    -fx-padding: 8 0 2 0;
+}
+
+.facts-grid, .dialog-grid {
+    -fx-hgap: 14;
+    -fx-vgap: 7;
+}
+
+.fact-key {
+    -fx-font-weight: bold;
+    -fx-text-fill: #475467;
+}
+
+.empty-state {
+    -fx-padding: 28;
+    -fx-text-fill: #667085;
+    -fx-font-size: 14px;
+}
+
+.table-view {
+    -fx-background-color: white;
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab:selected {
+    -fx-background-color: white;
+}
